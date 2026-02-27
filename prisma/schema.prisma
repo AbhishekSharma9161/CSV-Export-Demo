@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id        Int      @id @default(autoincrement())
+  name      String
+  category  String
+  price     Float
+  quantity  Int
+  status    String   // "active" | "inactive" | "discontinued"
+  createdAt DateTime @default(now())
+}
+
+model ExportJob {
+  id           String   @id @default(cuid())
+  filters      String   // JSON stringified filter object
+  status       String   @default("PENDING") // PENDING | PROCESSING | DONE | FAILED
+  lastCursor   Int      @default(0)
+  rowsExported Int      @default(0)
+  totalRows    Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
