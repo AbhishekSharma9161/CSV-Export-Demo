@@ -2,7 +2,7 @@
 
 > A production-ready **Next.js 16** application that streams up to **100,000+ rows** from a SQLite database to a CSV file in the browser — with **cursor-based pagination**, **Server-Sent Events (SSE) streaming**, **resumable exports**, and a polished React UI.
 
-**GitHub Repository:** [https://github.com/AbhishekSharma9161/CSV-Export-Demo](https://github.com/AbhishekSharma9161/CSV-Export-Demo)
+
 
 ---
 
